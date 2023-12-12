@@ -1,13 +1,16 @@
 import { Pool } from "pg";
 
 import { UrlType } from "../type/type";
+
+
+
+
+
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD, // Veritabanı kullanıcısının şifresi
-  port: 5432, // Varsayılan PostgreSQL portu
-});
+
+  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
+
+})
 
 export async function InsertNewUrl(props:UrlType) {
   const result = await pool.query('INSERT INTO urls (route, link,view,email) VALUES ($1, $2, $3, $4)', [props.route, props.link,props.view,props.email] );

@@ -1,9 +1,15 @@
 import CardClient from "@/components/CardClient";
 import { Card, CardBody } from "@nextui-org/card";
+import { NextPageContext } from "next";
 import toast, { Toaster } from "react-hot-toast";
+
+
 
 export default async function Home() {
 
+
+    
+  
 
 
   

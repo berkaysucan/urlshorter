@@ -101,7 +101,7 @@ const CardClient = () => {
               symbol=""
               className={success ? "flex" : "hidden"}
             >
-              <span>localhost:3000/{input.route}</span>
+              <p>{process.env.siteUrl}{input.route}</p>
             </Snippet>
           </div>
           

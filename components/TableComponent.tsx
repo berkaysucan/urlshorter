@@ -24,6 +24,8 @@ const TableComponent: React.FC<TableComponentProps> = ({ rows }) => {
     toast.success("Deleted Successfully");
   };
 
+ 
+
   return (
     <Table aria-label="Example table with dynamic content">
       <TableHeader>
@@ -36,8 +38,8 @@ const TableComponent: React.FC<TableComponentProps> = ({ rows }) => {
           <TableRow key={row.id}>
             <TableCell>{row.link}</TableCell>
             <TableCell>
-              <Link className="underline" href={`http://localhost:3000/${row.route}`}>
-                {`http://localhost:3000/${row.route}`}
+              <Link className="underline" href={`${process.env.siteUrl}${row.route}`}>
+                {`${process.env.siteUrl}${row.route}`}
               </Link>
             </TableCell>
             <TableCell>{row.view}</TableCell>
